@@ -1,0 +1,140 @@
+body {
+    color: #292929;
+    font-family: 'Roboto Condensed';
+}
+
+p {
+    color: #5F5F5F;
+}
+
+h5,
+h4 {
+    font-weight: bold;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #CE2829;
+    height: 150px;
+
+
+}
+
+.header-logo {
+    text-align: center;
+
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    padding-left: 10px;
+
+}
+
+.nav-links a:hover {
+    color: yellow;
+    cursor: pointer;
+}
+
+/* main page */
+.container {
+    display: flex;
+    max-width: 580px;
+}
+
+.description {
+    display: flex;
+    justify-content: space-between;
+}
+
+.right {
+    display: flex;
+    gap: 100px;
+}
+
+.form1 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.radio {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.radio div {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+}
+
+/* ek malzemeler */
+
+.ek-malzemeler {
+    columns: 3;
+}
+
+.ek-items {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Siparis Notu */
+.textarea {
+    width: 100%;
+
+}
+
+.checkout {
+    display: flex;
+    justify-content: space-between;
+}
+
+.order-btn {
+    display: flex;
+    height: 40px;
+
+}
+
+.order-btn button {
+    background-color: #FDC913;
+    width: 40px;
+    height: 50px;
+    border: none;
+    border-radius: 5px;
+}
+
+.count {
+    width: 40px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #5F5F5F;
+    border-radius: 5px;
+
+}
+
+
+.hesaplama {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border: 1px solid #5F5F5F;
+    border-radius: 5px;
+    width: 60%;
+}
+
+.siparis-btn {
+    border: none;
+    background-color: #FDC913;
+    height: 40px;
+    width: 100%;
+}
