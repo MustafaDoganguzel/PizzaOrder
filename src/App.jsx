@@ -1,14 +1,13 @@
-import React from 'react'
-import { useState } from 'react'
-
-
+import React, { useState } from 'react'
 import HomePage from './components/HomePage/HomePage'
 import OrderPage from './components/OrderPage/orderPage'
-import { Switch } from 'react-router-dom'
-import { Route } from 'react-router-dom/cjs/react-router-dom.min'
+import { Switch, Route } from 'react-router-dom'
+
+
+import Success from './components/Success/Success'
 
 function App() {
-
+  const [responseData, setResponseData] = useState([]);
 
   return (
     <>
@@ -17,7 +16,10 @@ function App() {
           <HomePage />
         </Route>
         <Route path='/OrderPage'>
-          <OrderPage />
+          <OrderPage setResponseData={setResponseData} />
+        </Route>
+        <Route path='/success'>
+          <Success responseData={responseData} />
         </Route>
       </Switch>
 
