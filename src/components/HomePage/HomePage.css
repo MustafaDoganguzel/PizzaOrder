@@ -1,11 +1,3 @@
-html,
-body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-}
-
 .homepage {
     position: relative;
     width: 100%;
@@ -14,20 +6,20 @@ body {
 
 }
 
-.home-banner {
-
-    height: 100%;
-
-}
-
 .centered {
     position: absolute;
-    top: 30%;
+    top: 20%;
     left: 50%;
     transform: translate(-40%, -40%);
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.home-banner {
+    width: 100%;
+    height: 100%;
+
 }
 
 .btn-aciktim {
@@ -39,6 +31,8 @@ body {
     border-radius: 10px;
     cursor: pointer;
     font-size: 16px;
+    width: 150px;
+    height: 50px;
 
 }
 

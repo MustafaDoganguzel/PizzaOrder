@@ -3,7 +3,7 @@ import './Success.css'
 export default function Success(props) {
     const { responseData } = props;
     const { thickness, size, additional, adSoyad, note } = responseData
-    console.log(responseData)
+
     return (<>
 
         <header className='success'>

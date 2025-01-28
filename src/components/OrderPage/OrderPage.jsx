@@ -77,13 +77,13 @@ export default function OrderPage(props) {
     function handleSubmit(e) {
 
         e.preventDefault();
-        console.log(" isValid burada " + isValid)
         if (!isValid) return;
 
         axios.post('https://reqres.in/api/pizza', formData)
             .then(response => {
                 setResponseData(response.data)
-                setFormData(initialData)
+
+
             })
             .catch(error => console.error(error));
     }
