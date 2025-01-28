@@ -86,6 +86,17 @@ h4 {
     gap: 5px;
 }
 
+/* adSoyad */
+.adSoyad {
+    display: flex;
+    flex-direction: column;
+}
+
+.adSoyad label {
+    font-size: medium;
+    font-weight: bold;
+}
+
 /* Siparis Notu */
 .textarea {
     width: 100%;
