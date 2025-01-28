@@ -2,11 +2,8 @@ import React from 'react'
 import './Success.css'
 export default function Success(props) {
     const { responseData } = props;
-    const { thickness,
-        size,
-        additional,
-        adSoyad,
-        note } = responseData
+    const { thickness, size, additional, adSoyad, note } = responseData
+    console.log(responseData)
     return (<>
 
         <header className='success'>
@@ -17,9 +14,13 @@ export default function Success(props) {
             <h1>TEBRIKLER</h1>
             <h1>SIPARISINIZ ALINDI!</h1>
             <div>
+                <p>Isim Soyisim: <span>{adSoyad}</span></p>
                 <p>Boyut: <span>{size}</span></p>
                 <p>Hamur: <span>{thickness}</span></p>
-                <p>Ek Malzemeler: <span>{additional.join(", ")}</span></p>
+                {/* burada bi sikinti varr */}
+                <p>Ek Malzemeler: <span>{additional && additional.length > 0 ? additional.join(",") : "Yok"}</span></p>
+                {/* burada bi sikinti varr */}
+                <p>Siparis Notu: <span>{note}</span></p>
             </div>
 
         </div>

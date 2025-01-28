@@ -4,8 +4,6 @@ body {
     padding: 0;
     width: 100%;
     height: 100%;
-
-    font-family: 'Barlow';
 }
 
 .homepage {
@@ -44,7 +42,9 @@ body {
 
 }
 
-.baslik {
+.baslik h1 {
     color: white;
-    font-size: 40px;
+    font-size: 86px;
+    font-family: 'Roboto Condensed';
+
 }

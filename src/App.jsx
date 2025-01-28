@@ -18,7 +18,7 @@ function App() {
         <Route path='/OrderPage'>
           <OrderPage setResponseData={setResponseData} />
         </Route>
-        <Route path='/success'>
+        <Route path='/Success' >
           <Success responseData={responseData} />
         </Route>
       </Switch>
