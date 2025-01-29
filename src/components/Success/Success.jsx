@@ -1,9 +1,13 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './Success.css'
-export default function Success(props) {
-    const { responseData } = props;
-    const { thickness, size, additional, adSoyad, note } = responseData
+import { useHistory } from 'react-router-dom';
+export default function Success({ responseData }) {
 
+
+
+
+    const { thickness, size, additional, adSoyad, note, count, fiyat } = responseData
+    if (!responseData) return;
     return (<>
 
         <header className='success'>
@@ -21,6 +25,8 @@ export default function Success(props) {
                 <p>Ek Malzemeler: <span>{additional && additional.length > 0 ? additional.join(",") : "Yok"}</span></p>
                 {/* burada bi sikinti varr */}
                 <p>Siparis Notu: <span>{note}</span></p>
+                <p>Siparis Adeti: <span>{count} adet</span></p>
+                <p>Siparis Toplam Fiyati: <span>{fiyat} TL Odemeniz Olacaktir</span></p>
             </div>
 
         </div>

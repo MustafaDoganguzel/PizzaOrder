@@ -12,7 +12,7 @@ export default function HomePage() {
                     <h1>PIZZA, DOYURUR</h1>
                 </div>
                 <Link to="/OrderPage">
-                    <button className='btn-aciktim'>ACIKTIM</button>
+                    <button data-cy='btn-aciktim' className='btn-aciktim'>ACIKTIM</button>
                 </Link>
 
             </div>

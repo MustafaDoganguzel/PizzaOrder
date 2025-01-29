@@ -7,7 +7,7 @@ import { Switch, Route } from 'react-router-dom'
 import Success from './components/Success/Success'
 
 function App() {
-  const [responseData, setResponseData] = useState([]);
+  const [responseData, setResponseData] = useState();
 
   return (
     <>

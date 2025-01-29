@@ -40,9 +40,10 @@ const errorsMessage = {
 
 
 
-export default function OrderPage(props) {
-    const { setResponseData } = props;
+export default function OrderPage({ setResponseData }) {
+
     let history = useHistory();
+    // const [count, setCount] = useState(1);
     const [formData, setFormData] = useState(initialData)
     const [isValid, setIsValid] = useState(false)
     const [errors, setErrors] = useState({
@@ -74,21 +75,37 @@ export default function OrderPage(props) {
 
 
 
-    function handleSubmit(e) {
+    async function handleSubmit(e) {
 
         e.preventDefault();
         if (!isValid) return;
+        try {
+            const response = await axios.post('https://reqres.in/api/pizza', formData);
+            if (response.status === 201) {
+                console.log("FormData: ", response.data)
+                setResponseData(response.data)
 
-        axios.post('https://reqres.in/api/pizza', formData)
-            .then(response => {
-                setResponseData(response.data);
-                history.push({
-                    state: { responseData: response.data } // burada responseData'yı state olarak geçiyoruz
-                });
-            })
-            .catch(error => {
-                console.error(error)
-            });
+                // history.push({
+                //     state: { responseData: response.data } // burada responseData'yı state olarak geçiyoruz
+                // });
+            }
+
+        }
+        catch (err) {
+            console.log(err)
+        }
+
+
+        //     .then(response => {
+        //     setResponseData(response.data); // response.data {data{:}}
+        //     console.log("FormData: " + response.data)
+        //     history.push({
+        //         state: { responseData: response.data } // burada responseData'yı state olarak geçiyoruz
+        //     });
+        // })
+        //     .catch(error => {
+        //         console.error(error)
+        //     });
     }
 
     useEffect(() => {
@@ -210,6 +227,7 @@ export default function OrderPage(props) {
                                         name='size' // e.target'tan hangi inputu almamizi gosteren attribute e.target.name gibi
                                         onChange={handleChange}
                                         value='small'
+                                        data-cy='small-size'
 
                                     />
                                     <label htmlFor='small'> Küçük </label>
@@ -221,6 +239,7 @@ export default function OrderPage(props) {
                                         name='size'
                                         onChange={handleChange}
                                         value='medium'
+                                        data-cy='medium-size'
 
                                     />
                                     <label htmlFor='medium'> Orta </label>
@@ -232,11 +251,12 @@ export default function OrderPage(props) {
                                         name='size'
                                         onChange={handleChange}
                                         value='large'
+                                        data-cy='large-size'
 
                                     />
                                     <label htmlFor='large'> Büyük</label>
                                 </div>
-                                <div className='erorrs'>
+                                <div className='erorrs' data-cy='size-msg'>
                                     {errors.size && <p style={{ color: "#dc3545" }}>{errorsMessage.size}</p>}
                                 </div>
                             </div>
@@ -245,7 +265,7 @@ export default function OrderPage(props) {
                         {/* Select-options  */}
                         <div className='thickness'>
                             <h5>Hamur Sec</h5>
-                            <select onChange={handleChange} name='thickness' value={formData.thickness}>
+                            <select onChange={handleChange} name='thickness' value={formData.thickness} data-cy="thickness-input">
 
                                 <option value="Ince Hamur">Ince Hamur</option>
                                 <option value="Klasik Hamur">Klasik Hamur</option>
@@ -267,7 +287,7 @@ export default function OrderPage(props) {
                         <div className='ek-malzemeler'>
                             {ekMalzemeler.map((item, index) => {
                                 return <div className='ek-items' key={index}>
-                                    <input value={item} onChange={handleChange}
+                                    <input data-cy={`additional-input-${item}`} value={item} onChange={handleChange}
                                         name='additional' type="checkbox" id={`malzeme-${index}`} />
                                     <label htmlFor={`malzeme-${index}`}>{item}</label>
                                 </div>
@@ -286,6 +306,7 @@ export default function OrderPage(props) {
                                 placeholder='Lutfen isminizi ve soyisminizi giriniz...'
                                 value={formData.adSoyad}
                                 onChange={handleChange}
+                                data-cy='adSoyad-input'
                             />
 
                         </div>
@@ -312,7 +333,7 @@ export default function OrderPage(props) {
                                 <p>Secimler <span>{formData.additional.length * 5}</span></p>
                                 <p>Toplam  <span>{toplam}₺</span></p>
                                 <Link to='/Success'>
-                                    <button disabled={!isValid} className='siparis-btn'>SIPARIS VER</button>
+                                    <button disabled={!isValid} data-cy="siparis-btn" className='siparis-btn'>SIPARIS VER</button>
                                 </Link>
 
                             </div>
