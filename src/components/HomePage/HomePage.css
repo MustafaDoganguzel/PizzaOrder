@@ -1,9 +1,10 @@
 .homepage {
-    position: relative;
+
     width: 100%;
-    height: 100vh;
+    height: 100%;
     font-family: 'Barlow';
     overflow: hidden;
+
 }
 
 .centered {
@@ -36,9 +37,196 @@
 
 }
 
-.baslik h1 {
+.baslik {
     color: white;
     font-size: 86px;
-    font-family: 'Roboto Condensed';
+    font-family: 'Roboto Condensed', serif;
+    font-weight: 300;
+    padding-top: 10px;
+}
 
+.baslik1 {
+    padding-top: 10px;
+    color: #FDC913;
+    font-family: 'Satisfy', serif;
+    font-weight: 400;
+}
+
+/* IT2 icin homepage  */
+.home-images {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    padding: 10px 0px;
+}
+
+.home-items {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+/* cta  */
+.cta {
+    display: flex;
+    position: relative;
+    gap: 20px;
+    justify-content: center;
+    background-color: #FAF7F2;
+}
+
+.cta img {
+    border-radius: 10px;
+
+}
+
+.card1-desc {
+    position: absolute;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    top: 20%;
+    padding-left: 20px;
+
+}
+
+.card1-desc button {
+    border-radius: 10px;
+    border: none;
+    background-color: #FDC913;
+    width: 150px;
+    height: 40px;
+    color: #CE2829;
+    font-weight: 500;
+}
+
+.cta-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.cta-2 {
+    position: relative;
+}
+
+.card2-desc {
+    position: absolute;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    top: 20%;
+    padding-left: 20px;
+}
+
+.card2-desc button {
+    border-radius: 10px;
+    border: none;
+    background-color: #FDC913;
+    width: 150px;
+    height: 40px;
+    color: #CE2829;
+    font-weight: 500;
+}
+
+.cta-3 {
+    position: relative;
+}
+
+.card3-desc {
+    position: absolute;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    top: 20%;
+    padding-left: 20px;
+}
+
+.card3-desc button {
+    border-radius: 10px;
+    border: none;
+    background-color: #FDC913;
+    width: 150px;
+    height: 40px;
+    color: #CE2829;
+    font-weight: 500;
+}
+
+.card3-desc h1 {
+    color: black;
+}
+
+.card3-desc .red {
+    color: red;
+}
+
+/* food sections */
+.food-sections {
+    display: flex;
+    flex-direction: column;
+    background-color: #FAF7F2;
+}
+
+.food-sections-headings {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+}
+
+.food-icons {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    padding: 0 300px;
+    /*  paddingi sor boyle olmaz :D  */
+}
+
+.food-icons-items {
+
+    width: 170px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 20px;
+    border-radius: 30px;
+    background-color: white;
+}
+
+/* last-section */
+.last-section {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    background-color: #FAF7F2;
+    padding-top: 50px;
+}
+
+.last-section-items {
+    background-color: white;
+    border-radius: 10px;
+    width: 400px;
+
+}
+
+.last-section-items img {
+    padding-left: 35px;
+}
+
+.last-section-items-text {
+    text-align: left;
+    padding-left: 20px;
+    font-weight: bold;
+}
+
+.last-section-items-rating {
+    display: flex;
+    justify-content: space-around
 }
