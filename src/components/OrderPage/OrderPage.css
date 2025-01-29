@@ -104,7 +104,11 @@
 .order-btn {
     display: flex;
     height: 40px;
+    position: relative;
+}
 
+.erorrs-btn {
+    padding-top: 10px;
 }
 
 .order-btn button {

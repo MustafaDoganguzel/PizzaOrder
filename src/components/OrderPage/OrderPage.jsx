@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Link } from 'react-router-dom';
 import "./OrderPage.css"
-import { Form, FormGroup, Input, Label } from 'reactstrap';
+
 import axios from 'axios';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 const ekMalzemeler = [
@@ -28,7 +28,7 @@ const initialData = {
     additional: [],
     adSoyad: '',
     note: '',
-    count: 1,
+    count: 0,
     fiyat: 85.5,
 }
 const errorsMessage = {
@@ -36,6 +36,8 @@ const errorsMessage = {
     size: 'Pizzaniz icin boyutlardan birini secmelisiniz.',
     additional: 'En az 4 adet, En fazla 10 adet ek malzeme secebilirsiniz.',
     adSoyad: 'Siparisiniz icin, isim soyisim alani en az 3 harften olusmalidir.',
+    note: 'Not Alani bos kalamaz...',
+    count: `0'dan buyuk olmali`
 }
 
 
@@ -51,7 +53,8 @@ export default function OrderPage({ setResponseData }) {
         size: false,
         additional: false,
         adSoyad: false,
-        note: false
+        note: true,
+        count: true
     })
     console.log(formData)
 
@@ -165,6 +168,12 @@ export default function OrderPage({ setResponseData }) {
             }
         }
 
+        if (name === 'note') {
+            setErrors({ ...errors, [name]: value === "" });
+        }
+        if (name === 'count') {
+            setErrors({ ...errors, [name]: value >= 1 });
+        }
     }
 
 
@@ -173,7 +182,9 @@ export default function OrderPage({ setResponseData }) {
             formData.additional.length >= 3 &&
             formData.additional.length < 10 &&
             formData.size !== "" &&
-            formData.thickness !== '') {
+            formData.thickness !== '' &&
+            formData.note !== '' &&
+            formData.count > 0) {
             setIsValid(true);
         } else {
             setIsValid(false)
@@ -328,13 +339,23 @@ export default function OrderPage({ setResponseData }) {
                         <div className='order-Note'>
                             <h5>Siparis Notu</h5>
                             <textarea onChange={handleChange} name='note' className='textarea' placeholder='Siparise eklemek istedigin bir not var mi?'></textarea>
-                            <hr />
+
                         </div>
+
+                        <div className='erorrs' data-cy='size-msg'>
+                            {errors.note && <p style={{ color: "#dc3545" }}>{errorsMessage.note}</p>}
+                        </div>
+                        <hr />
                         <div className='checkout'>
-                            <div className='order-btn'>
-                                <button onClick={() => handleCounter("azalt")}>-</button>
-                                <div className='count'>{formData.count}</div>
-                                <button onClick={() => handleCounter("art")}>+</button>
+                            <div>
+                                <div className='order-btn'>
+                                    <button onClick={() => handleCounter("azalt")}>-</button>
+                                    <div onChange={handleChange} className='count'>{formData.count} </div>
+                                    <button onClick={() => handleCounter("art")}>+</button>
+                                </div>
+                                <div className='erorrs-btn' data-cy='size-msg'>
+                                    {errors.count && <p style={{ color: "#dc3545" }}>{errorsMessage.count}</p>}
+                                </div>
                             </div>
                             <div className='hesaplama'>
                                 <h5>Siparis Toplami</h5>
