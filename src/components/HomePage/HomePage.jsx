@@ -1,6 +1,7 @@
 import React from 'react'
 import "./HomePage.css"
 import { Link } from 'react-router-dom/cjs/react-router-dom.min'
+import Footer from '../Footer/Footer';
 
 const homeImages = [
     { src: "../images/iteration-2-images/icons/1.svg", text: "YENİ! Kore" },
@@ -104,7 +105,7 @@ export default function HomePage() {
                 })}
 
             </div>
-
+            <Footer />
         </>
     )
 }
