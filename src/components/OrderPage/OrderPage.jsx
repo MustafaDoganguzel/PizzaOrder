@@ -53,8 +53,7 @@ export default function OrderPage({ setResponseData }) {
         size: false,
         additional: false,
         adSoyad: false,
-        note: true,
-        count: true
+
     })
     console.log(formData)
 
@@ -88,10 +87,7 @@ export default function OrderPage({ setResponseData }) {
             if (response.status === 201) {
                 console.log("FormData: ", response.data)
                 setResponseData(response.data)
-
-                // history.push({
-                //     state: { responseData: response.data } // burada responseData'yı state olarak geçiyoruz
-                // });
+                history.push("/Success") //redirect
             }
 
         }
@@ -100,16 +96,6 @@ export default function OrderPage({ setResponseData }) {
         }
 
 
-        //     .then(response => {
-        //     setResponseData(response.data); // response.data {data{:}}
-        //     console.log("FormData: " + response.data)
-        //     history.push({
-        //         state: { responseData: response.data } // burada responseData'yı state olarak geçiyoruz
-        //     });
-        // })
-        //     .catch(error => {
-        //         console.error(error)
-        //     });
     }
 
     useEffect(() => {
@@ -168,12 +154,6 @@ export default function OrderPage({ setResponseData }) {
             }
         }
 
-        if (name === 'note') {
-            setErrors({ ...errors, [name]: value === "" });
-        }
-        if (name === 'count') {
-            setErrors({ ...errors, [name]: value >= 1 });
-        }
     }
 
 
@@ -182,22 +162,11 @@ export default function OrderPage({ setResponseData }) {
             formData.additional.length >= 3 &&
             formData.additional.length < 10 &&
             formData.size !== "" &&
-            formData.thickness !== '' &&
-            formData.note !== '' &&
-            formData.count > 0) {
+            formData.thickness !== '') {
             setIsValid(true);
         } else {
             setIsValid(false)
         }
-        // setErrors({
-        //     ...errors,
-        //     thickness: formData.thickness !== '' ? false : true,
-        //     size: formData.size ? false : true,
-        //     additional: formData.additional.length >= 3 && formData.additional.length < 10 ? false : true,
-        //     adSoyad: formData.adSoyad.trim().length > 3 ? false : true
-        // })
-        // setIsValid(!errorsMessage.adSoyad && !errorsMessage.thickness && !errorsMessage.size && !errorsMessage.additional)
-
     }, [formData])
 
     return (<>
@@ -342,29 +311,22 @@ export default function OrderPage({ setResponseData }) {
 
                         </div>
 
-                        <div className='erorrs' data-cy='size-msg'>
-                            {errors.note && <p style={{ color: "#dc3545" }}>{errorsMessage.note}</p>}
-                        </div>
+
                         <hr />
                         <div className='checkout'>
                             <div>
                                 <div className='order-btn'>
-                                    <button onClick={() => handleCounter("azalt")}>-</button>
+                                    <button type="button" onClick={() => handleCounter("azalt")}>-</button>
                                     <div onChange={handleChange} className='count'>{formData.count} </div>
-                                    <button onClick={() => handleCounter("art")}>+</button>
+                                    <button type="button" onClick={() => handleCounter("art")}>+</button>
                                 </div>
-                                <div className='erorrs-btn' data-cy='size-msg'>
-                                    {errors.count && <p style={{ color: "#dc3545" }}>{errorsMessage.count}</p>}
-                                </div>
+
                             </div>
                             <div className='hesaplama'>
                                 <h5>Siparis Toplami</h5>
                                 <p>Secimler <span>{formData.additional.length * 5}</span></p>
                                 <p>Toplam  <span>{toplam}₺</span></p>
-                                <Link to='/Success'>
-                                    <button disabled={!isValid} data-cy="siparis-btn" className='siparis-btn'>SIPARIS VER</button>
-                                </Link>
-
+                                <button type="submit" disabled={!isValid} data-cy="siparis-btn" className='siparis-btn'>SIPARIS VER</button>
                             </div>
 
                         </div>
