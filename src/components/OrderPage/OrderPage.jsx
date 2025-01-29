@@ -53,7 +53,7 @@ export default function OrderPage({ setResponseData }) {
         adSoyad: false,
         note: false
     })
-
+    console.log(formData)
 
     // const {thickness, size, additional, adSoyad, count, vb........} = formData; ********* destruct edip formData.size gibi seyler yazmaktan kurtaracak!!! ********
 
@@ -79,6 +79,7 @@ export default function OrderPage({ setResponseData }) {
 
         e.preventDefault();
         if (!isValid) return;
+        console.log("BURADA FD", formData)
         try {
             const response = await axios.post('https://reqres.in/api/pizza', formData);
             if (response.status === 201) {
@@ -132,8 +133,11 @@ export default function OrderPage({ setResponseData }) {
             }
         } else {
             // Diğer alanları güncelle
-            setFormData({ ...formData, [name]: value });
+            // setFormData({ ...formData, [name]: value });
+            setFormData((prev) => ({ ...prev, [name]: value })) //// 
         }
+        /// state obj ve array ise prev kullan yukaridaki gibi 
+
 
         {/* validation icin Errors guncelleme */ }
 
@@ -160,8 +164,9 @@ export default function OrderPage({ setResponseData }) {
                 setErrors({ ...errors, [name]: true })
             }
         }
-        console.log(formData)
+
     }
+
 
     useEffect(() => {
         if (formData.adSoyad.trim().length >= 3 &&
@@ -266,9 +271,12 @@ export default function OrderPage({ setResponseData }) {
                         <div className='thickness'>
                             <h5>Hamur Sec</h5>
                             <select onChange={handleChange} name='thickness' value={formData.thickness} data-cy="thickness-input">
-
+                                <option value="" disabled>
+                                    -- Hamur Kalınlığı Seç --
+                                </option>
                                 <option value="Ince Hamur">Ince Hamur</option>
                                 <option value="Klasik Hamur">Klasik Hamur</option>
+
                             </select>
                             <div className='erorrs'>
                                 {errors.thickness && <p style={{ color: "#dc3545" }}>{errorsMessage.thickness}</p>}

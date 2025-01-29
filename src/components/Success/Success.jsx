@@ -3,11 +3,12 @@ import './Success.css'
 import { useHistory } from 'react-router-dom';
 export default function Success({ responseData }) {
 
-
-
-
     const { thickness, size, additional, adSoyad, note, count, fiyat } = responseData
-    if (!responseData) return;
+
+    console.log(responseData)
+    if (!responseData) {
+        return <p>yukleniyorr...</p>
+    }
     return (<>
 
         <header className='success'>
@@ -26,7 +27,7 @@ export default function Success({ responseData }) {
                 {/* burada bi sikinti varr */}
                 <p>Siparis Notu: <span>{note}</span></p>
                 <p>Siparis Adeti: <span>{count} adet</span></p>
-                <p>Siparis Toplam Fiyati: <span>{fiyat} TL Odemeniz Olacaktir</span></p>
+                <p>Siparis Tutari: <span>{fiyat} adet</span></p>
             </div>
 
         </div>
