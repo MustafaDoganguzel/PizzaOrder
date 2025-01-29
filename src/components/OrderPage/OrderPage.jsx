@@ -81,11 +81,14 @@ export default function OrderPage(props) {
 
         axios.post('https://reqres.in/api/pizza', formData)
             .then(response => {
-                setResponseData(response.data)
-
-
+                setResponseData(response.data);
+                history.push({
+                    state: { responseData: response.data } // burada responseData'yı state olarak geçiyoruz
+                });
             })
-            .catch(error => console.error(error));
+            .catch(error => {
+                console.error(error)
+            });
     }
 
     useEffect(() => {
@@ -133,13 +136,6 @@ export default function OrderPage(props) {
             }
         }
 
-        // if (name === 'additional') {
-        //     if (value.length >= 3 && value.length < 10) {
-        //         setErrors({ ...errors, [name]: false });
-        //     } else {
-        //         setErrors({ ...errors, [name]: true })
-        //     }
-        // }
         if (name === 'adSoyad') {
             if (value.trim().length >= 3) {
                 setErrors({ ...errors, [name]: false });
@@ -147,26 +143,6 @@ export default function OrderPage(props) {
                 setErrors({ ...errors, [name]: true })
             }
         }
-        // if (formData.thickness !== '') {
-        //     setErrors({ ...errors, thickness: false })
-        // } else {
-        //     setErrors({ ...errors, thickness: true })
-        // }
-        // if (formData.size !== "") {
-        //     setErrors({ ...errors, size: false })
-        // } else {
-        //     setErrors({ ...errors, size: true })
-        // }
-        // if (formData.additional.length >= 3 && formData.additional.length < 10) {
-        //     setErrors({ ...errors, additional: false })
-        // } else {
-        //     setErrors({ ...errors, additional: true })
-        // }
-        // if (formData.adSoyad.trim().length >= 3) {
-        //     setErrors({ ...errors, adSoyad: false })
-        // } else {
-        //     setErrors({ ...errors, adSoyad: true })
-        // }
         console.log(formData)
     }
 
