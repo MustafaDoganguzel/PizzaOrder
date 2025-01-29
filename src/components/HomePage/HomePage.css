@@ -207,13 +207,14 @@
     justify-content: center;
     background-color: #FAF7F2;
     padding-top: 50px;
+    height: 500px;
 }
 
 .last-section-items {
     background-color: white;
     border-radius: 10px;
     width: 400px;
-
+    height: 400px;
 }
 
 .last-section-items img {
