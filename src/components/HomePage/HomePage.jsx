@@ -24,13 +24,13 @@ export default function HomePage() {
                 <img className='home-banner' src="../images/iteration-1-images/home-banner.png" alt="home-banner" />
                 <div className='centered'>
                     <img className='home-banner' src="/images/iteration-1-images/logo.svg" alt="home-logo" />
-                    <div className='baslik1'>firsati kacirma</div>
-                    <div className='baslik'>
+                    <div className='baslik1' style={{ fontFamily: 'Satisfy', color: '#FDC913', fontWeight: 400 }}>firsati kacirma</div>
+                    <div className='baslik' style={{ fontFamily: 'Satisfy', color: 'white', fontWeight: 100 }}>
                         <h1>KOD ACIKTIRIR</h1>
                         <h1>PIZZA, DOYURUR</h1>
                     </div>
                     <Link to="/OrderPage">
-                        <button data-cy='btn-aciktim' className='btn-aciktim'>ACIKTIM</button>
+                        <button data-cy='btn-aciktim' className='btn-aciktim'  >ACIKTIM</button>
                     </Link>
                 </div>
             </div>

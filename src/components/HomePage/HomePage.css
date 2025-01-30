@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+
 .homepage {
 
     width: 100%;
@@ -48,7 +50,7 @@
 .baslik1 {
     padding-top: 10px;
     color: #FDC913;
-    font-family: 'Satisfy', serif;
+    font-family: 'Barlow', serif;
     font-weight: 400;
 }
 
