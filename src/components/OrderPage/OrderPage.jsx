@@ -28,7 +28,7 @@ const initialData = {
     additional: [],
     adSoyad: '',
     note: '',
-    count: 0,
+    count: 1,
     fiyat: 85.5,
 }
 const errorsMessage = {
@@ -36,8 +36,7 @@ const errorsMessage = {
     size: 'Pizzaniz icin boyutlardan birini secmelisiniz.',
     additional: 'En az 4 adet, En fazla 10 adet ek malzeme secebilirsiniz.',
     adSoyad: 'Siparisiniz icin, isim soyisim alani en az 3 harften olusmalidir.',
-    note: 'Not Alani bos kalamaz...',
-    count: `0'dan buyuk olmali`
+
 }
 
 
@@ -211,7 +210,7 @@ export default function OrderPage({ setResponseData }) {
                                         id='small'
                                         name='size' // e.target'tan hangi inputu almamizi gosteren attribute e.target.name gibi
                                         onChange={handleChange}
-                                        value='small'
+                                        value='Small'
                                         data-cy='small-size'
 
                                     />
@@ -223,7 +222,7 @@ export default function OrderPage({ setResponseData }) {
                                         id='medium'
                                         name='size'
                                         onChange={handleChange}
-                                        value='medium'
+                                        value='Medium'
                                         data-cy='medium-size'
 
                                     />
@@ -235,7 +234,7 @@ export default function OrderPage({ setResponseData }) {
                                         id='large'
                                         name='size'
                                         onChange={handleChange}
-                                        value='large'
+                                        value='Large'
                                         data-cy='large-size'
 
                                     />
