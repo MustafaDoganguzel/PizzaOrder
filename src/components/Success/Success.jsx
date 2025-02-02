@@ -35,7 +35,7 @@ export default function Success({ responseData }) {
                     {note && <p>Siparis Notu: <span>{note}</span></p>}
                     <div>Ek Secimler: {additional.length * 5} TL</div>
                     <div>Siparis Adeti: <span>{count} adet</span></div>
-                    <div>Sidivaris Tutari: <span>{count * fiyat + (additional.length * 5)} TL</span></div>
+                    <div>Siparis Tutari: <span>{count * fiyat + (additional.length * 5)} TL</span></div>
                 </div>
 
             </div>
