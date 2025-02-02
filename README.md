@@ -4,6 +4,7 @@ Welcome to Pizza Order App, a fully functional React-based Single Page Applicati
 
 🎯 Features
 ✅ Live Order Customization – Users can select pizza size, toppings, and extras while seeing price updates dynamically.
+
 ✅ Order Summary Page – Displays final order details before confirmation.
 ✅ Form Validation & Error Handling – Ensures correct input with instant feedback.
 ✅ Responsive Design – Works seamlessly on mobile, tablet, and desktop.
