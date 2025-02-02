@@ -4,7 +4,7 @@
     align-items: center;
     justify-content: center;
     background-color: #CE2829;
-    height: 150px;
+    height: 100px;
 
 
 }
@@ -16,21 +16,23 @@
 
 .nav-links a {
     text-decoration: none;
-    color: white;
-    padding-left: 10px;
+    color: black;
+    padding-bottom: 100px;
 
 }
 
 
-.nav-links a:hover {
-    color: yellow;
-    cursor: pointer;
-}
 
 /* main page */
 .container {
     display: flex;
     max-width: 580px;
+}
+
+.container-first {
+    display: flex;
+    flex-direction: column;
+
 }
 
 .description {
@@ -50,8 +52,36 @@
 
 .radio {
     display: flex;
-    flex-direction: column;
-    gap: 5px;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.size-label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #f8f6f3;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    color: #444;
+    transition: background-color 1s;
+}
+
+input[type="radio"] {
+    display: none;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+input[type="radio"]:checked+.size-label {
+    background-color: #FDC913;
 }
 
 .radio div {
@@ -65,23 +95,79 @@
 
 .ek-malzemeler {
     columns: 3;
+
 }
 
 .ek-items {
     display: flex;
     align-items: center;
     gap: 5px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 16px;
+
+    color: #444;
+}
+
+.ek-items input {
+    display: none;
+
+}
+
+.custom-checkbox {
+    width: 20px;
+    height: 20px;
+    border-radius: 6px;
+    background-color: #f8f6f3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 8px;
+    transition: background-color 0.3s;
+}
+
+/* Seçili olduğunda kutunun rengi ve içindeki tik işareti */
+.ek-items input:checked+.custom-checkbox {
+    background-color: #f4c542;
+
+    transform: scale(1.1);
+}
+
+/* Tik işareti */
+.ek-items ::after {
+    content: "✔";
+    font-size: 16px;
+    color: white;
+    display: none;
+}
+
+.ek-items input:checked+.custom-checkbox::after {
+    display: block;
 }
 
 /* adSoyad */
 .adSoyad {
     display: flex;
     flex-direction: column;
+
 }
 
-.adSoyad label {
-    font-size: medium;
-    font-weight: bold;
+.adSoyad input {
+
+
+    height: 60px;
+    background-color: #f8f6f3;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    color: #444;
+    transition: background-color 1s;
+}
+
+.adSoyad input:hover {
+    background-color: #FDC913;
+    color: #CE2829;
 }
 
 /* thickness */
@@ -90,15 +176,40 @@
     flex-direction: column;
 }
 
+.thickness-label {
+    height: 60px;
+    background-color: #f8f6f3;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    color: #444;
+    transition: background-color 0.3s;
+}
+
 /* Siparis Notu */
 .textarea {
+
+
     width: 100%;
+    height: 50px;
+    background-color: #f8f6f3;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    color: #444;
+    transition: background-color 0.3s;
+}
+
+.textarea:hover {
+    background-color: #bae7eb;
+    color: #CE2829;
 
 }
 
 .checkout {
     display: flex;
     justify-content: space-between;
+
 }
 
 .order-btn {
@@ -135,9 +246,13 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
-    border: 1px solid #5F5F5F;
-    border-radius: 5px;
+    border-radius: 10px;
     width: 60%;
+    background-color: #FAF7F2;
+    border: none;
+    cursor: pointer;
+    color: #444;
+
 }
 
 .siparis-btn {
