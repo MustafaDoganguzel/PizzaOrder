@@ -17,6 +17,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 10px;
+
 }
 
 .home-banner {
@@ -36,13 +38,18 @@
     font-size: 16px;
     width: 150px;
     height: 50px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 
+}
+
+.btn-aciktim:hover {
+    background-color: burlywood;
 }
 
 .baslik h1 {
     color: white;
     font-size: 70px;
-    font-family: 'Roboto Condensed', sans-serif;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-weight: 300;
     padding-top: 10px;
 
@@ -104,6 +111,19 @@
     color: #CE2829;
     font-weight: 500;
 }
+
+.card1-desc button:hover {
+    background-color: burlywood
+}
+
+.card2-desc button:hover {
+    background-color: burlywood
+}
+
+.card3-desc button:hover {
+    background-color: burlywood
+}
+
 
 .cta-left {
     display: flex;
