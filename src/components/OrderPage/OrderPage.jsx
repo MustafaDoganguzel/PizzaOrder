@@ -6,7 +6,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import axios from 'axios';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
-import { Button, ButtonGroup } from 'reactstrap';
+
+import Footer from '../Footer/Footer';
 
 const ekMalzemeler = [
     "Pepperoni",
@@ -338,9 +339,9 @@ export default function OrderPage({ setResponseData }) {
 
                             </div>
                             <div className='hesaplama'>
-                                <h5>Siparis Toplami</h5>
-                                <p>Secimler <span>{formData.additional.length * 5}</span></p>
-                                <p>Toplam  <span>{toplam}₺</span></p>
+                                <h5 style={{ padding: "0 50px", marginTop: '10px' }}>Siparis Toplami</h5>
+                                <p className='secimler'>Secimler <span>{formData.additional.length * 5}₺</span></p>
+                                <p className='toplam' style={{ color: '#CE2829' }}>Toplam  <span >{toplam}₺</span></p>
                                 <button type="submit" disabled={!isValid} data-cy="siparis-btn" className='siparis-btn'>SIPARIS VER</button>
                             </div>
 
@@ -353,6 +354,7 @@ export default function OrderPage({ setResponseData }) {
 
 
         </form>
+        <Footer />
     </>
     )
 }

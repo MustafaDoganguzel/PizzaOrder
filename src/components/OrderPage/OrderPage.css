@@ -255,6 +255,19 @@ input[type="radio"]:checked+.size-label {
 
 }
 
+.secimler {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 50px;
+}
+
+.toplam {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 50px;
+    font-weight: bold;
+}
+
 .siparis-btn {
     border: none;
     background-color: #FDC913;
