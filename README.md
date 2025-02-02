@@ -1,18 +1,26 @@
 🍕 Pizza Order App 🚀
+
 Welcome to Pizza Order App, a fully functional React-based Single Page Application (SPA) where users can customize their pizza orders in real-time! Built as part of my Workintech Full-Stack Developer Training (Week 8), this project showcases my skills in state management, form validation, and component-based UI design.
 
 
 🎯 Features
+
 ✅ Live Order Customization – Users can select pizza size, toppings, and extras while seeing price updates dynamically.
 
 ✅ Order Summary Page – Displays final order details before confirmation.
+
 ✅ Form Validation & Error Handling – Ensures correct input with instant feedback.
+
 ✅ Responsive Design – Works seamlessly on mobile, tablet, and desktop.
+
 ✅ Smooth Navigation – React Router enables easy transitions between pages.
+
 ✅ Tested & Reliable – Cypress ensures proper functionality through automated testing.
+
 
 🛠 Tech Stack
 Technology	Purpose
+
 React.js	Component-based development using hooks (useState, useEffect)
 React Router	SPA navigation without page reloads
 Tailwind CSS	Modern and responsive styling
