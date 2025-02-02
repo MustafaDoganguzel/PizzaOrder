@@ -39,18 +39,19 @@
 
 }
 
-.baslik {
+.baslik h1 {
     color: white;
-    font-size: 86px;
-    font-family: 'Roboto Condensed', serif;
+    font-size: 70px;
+    font-family: 'Roboto Condensed', sans-serif;
     font-weight: 300;
     padding-top: 10px;
+
 }
 
 .baslik1 {
     padding-top: 10px;
     color: #FDC913;
-    font-family: 'Barlow', serif;
+    font-family: 'Roboto Condensed';
     font-weight: 400;
 }
 

@@ -25,7 +25,7 @@ export default function HomePage() {
                 <div className='centered'>
                     <img className='home-banner' src="/images/iteration-1-images/logo.svg" alt="home-logo" />
                     <div className='baslik1' style={{ fontFamily: 'Satisfy', color: '#FDC913', fontWeight: 400 }}>firsati kacirma</div>
-                    <div className='baslik' style={{ fontFamily: 'Satisfy', color: 'white', fontWeight: 100 }}>
+                    <div className='baslik' >
                         <h1>KOD ACIKTIRIR</h1>
                         <h1>PIZZA, DOYURUR</h1>
                     </div>
