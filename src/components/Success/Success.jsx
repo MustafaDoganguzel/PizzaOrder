@@ -18,32 +18,33 @@ export default function Success({ responseData }) {
         </header>
 
         <div className='congrats'>
-            <h1 style={{ fontFamily: 'Satisfy', color: '#FDC913', fontWeight: 400 }}>lezzetin yolda...</h1>
-            <h1>SIPARISINIZ ALINDI!</h1>
 
+            <div className='congrats-0'>
+                <h1 style={{ fontFamily: 'Satisfy', color: '#FDC913', fontWeight: 400 }}>lezzetin yolda...</h1>
+                <h1 style={{ fontFamily: 'Quattrocento', color: 'white' }}>SIPARISINIZ ALINDI!</h1>
 
-            <div className='order-details'>
-                <div className='order-details-1'>
-                    <div>Boyut: <span>{size}</span></div>
-                    <div>Hamur: <span>{thickness}</span></div>
+                <h4 style={{ color: "white", fontFamily: 'Barlow' }}>Position Absolute Aci Pizza</h4>
+            </div>
 
-                    <p>Ek Malzemeler: <strong >{additional && additional.length > 0 ? additional.join(",") : "Yok"}</strong></p>
-                </div>
-                <br />
-                <div className='order-details-2'>
-                    <h6>Siparis Toplami:</h6>
-                    {note && <p>Siparis Notu: <span>{note}</span></p>}
-                    <div>Ek Secimler: {additional.length * 5} TL</div>
-                    <div>Siparis Adeti: <span>{count} adet</span></div>
-                    <div>Siparis Tutari: <span>{count * fiyat + (additional.length * 5)} TL</span></div>
-                </div>
+            <div className='congrats-1'>
+                <div>Boyut: <strong>{size}</strong></div>
+                <div>Hamur: <strong>{thickness}</strong></div>
+                <div>Ek Malzemeler: <strong>{additional && additional.length > 0 ? additional.join(",") : "Yok"} </strong></div>
+            </div>
+
+            <div className='congrats-2'>
+                <div><strong> Siparis Toplami</strong></div>
+                <div>{note && <p>Siparis Notu: <span>{note}</span></p>}</div>
+                <div>Secimler: <strong>{additional.length * 5} ₺ </strong></div>
+                <div>Siparis Tutari: <strong>{count * fiyat + (additional.length * 5)} ₺</strong></div>
 
             </div>
 
+
+
             <br />
             <br />
-            <br />
-            <br />
+
 
         </div>
         <Footer />
