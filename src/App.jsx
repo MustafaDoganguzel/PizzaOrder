@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import HomePage from './components/HomePage/HomePage'
-import OrderPage from './components/OrderPage/orderPage'
+import OrderPage from './components/OrderPage/OrderPage'
 import { Switch, Route } from 'react-router-dom'
 
 
