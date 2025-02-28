@@ -4,12 +4,12 @@ import { Link } from 'react-router-dom/cjs/react-router-dom.min'
 import Footer from '../Footer/Footer';
 
 const homeImages = [
-    { src: "../images/iteration-2-images/icons/1.svg", text: "YENİ! Kore" },
-    { src: "../images/iteration-2-images/icons/2.svg", text: "Pizza" },
-    { src: "../images/iteration-2-images/icons/3.svg", text: "Burger" },
-    { src: "../images/iteration-2-images/icons/4.svg", text: "French Fries" },
-    { src: "../images/iteration-2-images/icons/5.svg", text: "Fast Food" },
-    { src: "../images/iteration-2-images/icons/6.svg", text: "Soft Drinks" }
+    { src: "/images/iteration-2-images/icons/1.svg", text: "YENİ! Kore" },
+    { src: "/images/iteration-2-images/icons/2.svg", text: "Pizza" },
+    { src: "/images/iteration-2-images/icons/3.svg", text: "Burger" },
+    { src: "/images/iteration-2-images/icons/4.svg", text: "French Fries" },
+    { src: "/images/iteration-2-images/icons/5.svg", text: "Fast Food" },
+    { src: "/images/iteration-2-images/icons/6.svg", text: "Soft Drinks" }
 ];
 const frameImages = [
     { src: "/images/iteration-2-images/pictures/food-1.png", text: 'Terminal Pizza', price: 60 },
@@ -21,7 +21,7 @@ export default function HomePage() {
         <>
 
             <div className='homepage'>
-                <img className='home-banner' src="../images/iteration-1-images/home-banner.png" alt="home-banner" />
+                <img className='home-banner' src="/images/iteration-1-images/home-banner.png" alt="home-banner" />
 
                 <div className='centered'>
                     <img className='home-banner' src="/images/iteration-1-images/logo.svg" alt="home-logo" />
