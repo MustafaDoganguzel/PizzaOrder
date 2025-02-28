@@ -11,7 +11,7 @@
 
 .centered {
     position: absolute;
-    top: 20%;
+    top: 30%;
     left: 50%;
     transform: translate(-40%, -40%);
     display: flex;
@@ -22,6 +22,7 @@
 }
 
 .home-banner {
+
     width: 100%;
     height: 100%;
 
